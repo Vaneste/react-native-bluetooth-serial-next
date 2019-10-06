@@ -707,7 +707,8 @@ public class RCTBluetoothSerialModule extends ReactContextBaseJavaModule
 
             if (TextUtils.isEmpty(delimiter)) {
                 data = buffer.toString();
-                buffer.delete(0, delimiter.length());
+                //Flushing buffer when red
+                buffer.delete(0, buffer.length());
                 mBuffers.put(id, buffer);
             } else {
                 int index = buffer.indexOf(delimiter, 0);
