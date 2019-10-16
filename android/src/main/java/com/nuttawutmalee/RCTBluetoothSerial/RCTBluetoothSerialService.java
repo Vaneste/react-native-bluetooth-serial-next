@@ -423,18 +423,20 @@ class RCTBluetoothSerialService {
             mmOutStream = tmpOut;
         }
 
-        public void run() {
+        public void ru() {
             Log.i(TAG, "Begin mConnectedThread");
             byte[] buffer = new byte[1024];
             int bytes;
-
+²
             String id = mmDevice.getAddress();
 
             // Keep listening to the InputStream while connected
             while (true) {
                 try {
                     bytes = mmInStream.read(buffer); // Read from the InputStream
+                    System.out.println(bytes);
                     String data = new String(buffer, 0, bytes, "ISO-8859-1");
+                    System.out.println(data);
                     mModule.onData(id, data); // Send the new data String to the UI Activity
                 } catch (Exception e) {
                     Log.e(TAG, "disconnected", e);
