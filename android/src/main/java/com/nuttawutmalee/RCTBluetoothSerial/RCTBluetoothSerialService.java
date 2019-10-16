@@ -434,7 +434,7 @@ class RCTBluetoothSerialService {
                 try {
                     bytes = mmInStream.read(buffer); // Read from the InputStream
                     System.out.printf("0x%02X", bytes);
-                            for (byte b : bytes) {
+                           for ( int j = 0; j < bytes.length; j++ ) {
             String st = String.format("%02X", b);
             System.out.print(st);
         }
