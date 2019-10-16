@@ -423,7 +423,7 @@ class RCTBluetoothSerialService {
             mmOutStream = tmpOut;
         }
 
-        public void ru() {
+        public void run() {
             Log.i(TAG, "Begin mConnectedThread");
             byte[] buffer = new byte[1024];
             int bytes;
