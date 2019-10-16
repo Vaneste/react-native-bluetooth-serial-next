@@ -427,7 +427,6 @@ class RCTBluetoothSerialService {
             Log.i(TAG, "Begin mConnectedThread");
             byte[] buffer = new byte[1024];
             int bytes;
-²
             String id = mmDevice.getAddress();
 
             // Keep listening to the InputStream while connected
