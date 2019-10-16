@@ -433,9 +433,8 @@ class RCTBluetoothSerialService {
             while (true) {
                 try {
                     bytes = mmInStream.read(buffer); // Read from the InputStream
-                    System.out.println(bytes);
+                    System.out.printf("0x%02X", bytes);
                     String data = new String(buffer, 0, bytes, "ISO-8859-1");
-                    System.out.println(data);
                     mModule.onData(id, data); // Send the new data String to the UI Activity
                 } catch (Exception e) {
                     Log.e(TAG, "disconnected", e);
